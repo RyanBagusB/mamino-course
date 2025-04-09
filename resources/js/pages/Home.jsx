@@ -1,5 +1,5 @@
 import React from "react";
-import { Head } from "@inertiajs/react";
+import { Head, router } from "@inertiajs/react"; // import router
 import { useAppearance } from "@/hooks/use-appearance";
 
 const Home = () => {
@@ -13,6 +13,10 @@ const Home = () => {
         : "light";
 
     updateAppearance(next);
+  };
+
+  const handleLogout = () => {
+    router.post('/logout');
   };
 
   return (
@@ -35,6 +39,15 @@ const Home = () => {
           <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
             Current mode: <strong>{appearance}</strong>
           </p>
+
+          <hr className="my-6" />
+
+          <button
+            onClick={handleLogout}
+            className="mt-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl shadow transition"
+          >
+            Logout
+          </button>
         </div>
       </div>
     </>
