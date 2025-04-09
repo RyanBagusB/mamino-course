@@ -10,7 +10,6 @@ class AcademyLearningPathSeeder extends Seeder
 {
     public function run(): void
     {
-        // Contoh sederhana: hubungkan semua academy dengan semua learning path
         $academies = Academy::all();
         $paths = LearningPath::all();
 
