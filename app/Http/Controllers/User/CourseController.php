@@ -1,23 +1,19 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace App\Http\Controllers\User;
 
-return new class extends Migration
+use App\Http\Controllers\Controller;
+use App\Models\Academy;
+use Inertia\Inertia;
+
+class CourseController extends Controller
 {
-    public function up(): void
+    public function index()
     {
-        Schema::create('academies', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description')->nullable();
-            $table->timestamps();
-        });
-    }
+        $academies = Academy::with('learningPaths')->get();
 
-    public function down(): void
-    {
-        Schema::dropIfExists('academies');
+        return Inertia::render('User/Academies/Index', [
+            'academies' => $academies,
+        ]);
     }
-};
+}
