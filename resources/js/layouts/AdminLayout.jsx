@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePage, router, Link } from '@inertiajs/react';
-import { useAppearance } from '../../hooks/use-appearance';
-import { cn } from '../../lib/utils';
+import { useAppearance } from '../hooks/use-appearance';
+import { cn } from '../lib/utils';
 
 const AdminLayout = ({ children }) => {
   const { auth, url } = usePage();
@@ -18,8 +18,8 @@ const AdminLayout = ({ children }) => {
       appearance === 'light'
         ? 'dark'
         : appearance === 'dark'
-        ? 'system'
-        : 'light';
+          ? 'system'
+          : 'light';
 
     updateAppearance(next);
   };
