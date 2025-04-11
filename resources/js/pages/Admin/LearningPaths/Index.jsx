@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import AdminLayout from "../../Layouts/AdminLayout";
 import { Head, usePage, router } from "@inertiajs/react";
+import AdminLayout from "../../../layouts/AdminLayout";
 
 const Index = () => {
   const { learningPaths } = usePage().props;

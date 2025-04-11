@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Head, router, useForm } from "@inertiajs/react";
-import AdminLayout from "../../Layouts/AdminLayout";
+import AdminLayout from "../../../layouts/AdminLayout";
 
 const Edit = ({ learningPath, academies }) => {
   const { data, setData, put, processing, errors } = useForm({
