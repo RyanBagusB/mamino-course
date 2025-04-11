@@ -18,6 +18,10 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/academies', [AcademyController::class, 'index'])->name('academies.index');
+        Route::post('/academies', [AcademyController::class, 'store'])->name('academies.store');
         Route::get('/learning-paths', [LearningPathController::class, 'index'])->name('learning-paths.index');
+        Route::post('/learning-paths', [LearningPathController::class, 'store'])->name('learning-paths.store');
+        Route::get('/learning-paths/{learningPath}/edit', [LearningPathController::class, 'edit'])->name('learning-paths.edit');
+        Route::put('/learning-paths/{learningPath}', [LearningPathController::class, 'update'])->name('learning-paths.update');
     });
 });
